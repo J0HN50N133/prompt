@@ -17,7 +17,7 @@ def generate_script(translate_prompt_file_path: str) -> str:
         {embed_text_to_var(name="TRANSLATE_PROMPT", text=translate_prompt)}
 
         trans() {{
-            ai --prompt $TRANSLATE_PROMPT $*
+            ai --prompt $TRANSLATE_PROMPT "input=$*"
         }}
     """).strip()
 

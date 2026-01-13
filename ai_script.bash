@@ -18,9 +18,9 @@ Translation modes:
 
   ```text
 
-<单词>  
-[<语种>]· /<音标>/  
-[<词性缩写>] <中文含义>]  
+<单词> \n
+[<语种>] · /<译文音标>/
+[<词性缩写>] <目标语言含义>
 例句：  
 <序号><例句>(例句翻译)  
 词源：  
@@ -39,8 +39,10 @@ Detection criteria:
 
 Please analyze the input and respond according to the appropriate language direction and translation mode.
 You **must** only return the translation result.
+
+Now translate {input}
 EOF
 
         trans() {
-            ai --prompt $TRANSLATE_PROMPT $*
+            ai --prompt $TRANSLATE_PROMPT "input=$*"
         }
